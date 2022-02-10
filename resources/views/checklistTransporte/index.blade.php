@@ -687,9 +687,6 @@ use App\Http\Controllers\ChecklistController;
                         </div>
 
 
-
-
-
        <!--  diagnostico -->
        <div class="form-group row">
                             <label for="diagnostico" class="col-md-4 col-form-label text-md-right">{{ __('Diagnóstico') }}</label>
@@ -702,6 +699,51 @@ use App\Http\Controllers\ChecklistController;
                                 @enderror
                             </div>
               </div>
+
+
+
+                       <!--  GESTANTE   -->
+                      <div class="form-group row" required>
+                       <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Gestante') }}</label>
+                            <div class="col-md-6">
+                            <select id="gestante" class="form-control" name="gestante">
+                            <option selected></option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                            </select>    
+                            </div>
+                        </div>
+
+
+                      
+                      <!--  recebeGestante -->
+                      <div class="form-group row">
+                            <label for="recebeGestante" class="col-md-4 col-form-label text-md-right">{{ __('Quem Recebe') }}</label>
+                            <div class="col-md-6">
+                                <input id="recebeGestante" type="text" class="form-control @error('recebeGestante') is-invalid @enderror" name="recebeGestante"  required autocomplete="recebeGestante">
+                                @error('recebeGestante')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+                     
+                     <!--  Se o Nascimento for no local de Destino  -->
+                      <div class="form-group row">
+                            <label for="nascDestino" class="col-md-4 col-form-label text-md-right">{{ __('Se o nascimento for no local de destino ?') }}</label>
+                            <div class="col-md-6">
+                                <input id="nascDestino" type="text" class="form-control @error('nascDestino') is-invalid @enderror" name="nascDestino"  required autocomplete="nascDestino">
+                                @error('nascDestino')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
 
 
                         
@@ -719,6 +761,7 @@ use App\Http\Controllers\ChecklistController;
                         </div>
 
 
+
                      <!--  LeitoOrigem -->
                        <div class="form-group row">
                             <label for="LeitoOrigem" class="col-md-4 col-form-label text-md-right">{{ __('Leito de Origem') }}</label>
@@ -731,7 +774,6 @@ use App\Http\Controllers\ChecklistController;
                                 @enderror
                             </div>
                         </div>
-
 
 
                       
@@ -814,8 +856,6 @@ use App\Http\Controllers\ChecklistController;
 
 
 
-
-
                     </div>
                         </div>
                         </div>
@@ -859,7 +899,22 @@ use App\Http\Controllers\ChecklistController;
                             </div>
                         </div>
     
-                        
+
+
+                <!--  Motivo do Contato -->
+       <div class="form-group row">
+                            <label for="mcontato" class="col-md-4 col-form-label text-md-right">{{ __('Motivo do Contato ') }}</label>
+                            <div class="col-md-6">
+                            <textarea class="form-control @error('mcontato') is-invalid @enderror" name="mcontato"  required autocomplete="mcontato" rows="3"></textarea>
+                                @error('diagnostico')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+              </div>
+
+
 
          <!--  respiratoria -->
          <div class="form-group row" required>
@@ -872,6 +927,24 @@ use App\Http\Controllers\ChecklistController;
                             </select>    
                             </div>
                         </div>
+
+
+
+
+        <!--  Motivo do Contato -->
+       <div class="form-group row">
+                            <label for="mrespiratoria" class="col-md-4 col-form-label text-md-right">{{ __('Motivo: Respiratoria') }}</label>
+                            <div class="col-md-6">
+                            <textarea class="form-control @error('mrespiratoria') is-invalid @enderror" name="mrespiratoria"  required autocomplete="mrespitartoria" rows="3"></textarea>
+                                @error('mrespiratoria')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+              </div>
+
+            
 
 
 
@@ -897,15 +970,13 @@ use App\Http\Controllers\ChecklistController;
                             <select id="metodo" class="form-control" name="metodo">
                             <option selected></option>
                             <option value="TR">TR</option>
+                            <option value="TR">Antigeno</option>
                             <option value="PCR">PCR</option>
                             <option value="Não foi Testado">Não foi Testado</option>
 
                             </select>    
                             </div>
                         </div>
-
-
-
 
 
 

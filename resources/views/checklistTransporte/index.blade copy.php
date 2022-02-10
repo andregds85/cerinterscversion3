@@ -1630,6 +1630,228 @@ use App\Http\Controllers\ChecklistController;
                         </div>
 
 <!--  fim -->
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Informações Complementares') }}</div>
+              
+           
+   
+  
+
+
+                      <!--  Funcionalidade -->
+                    <div class="form-group row" required>
+                            <label for="aguda" class="col-md-4 col-form-label text-md-right">{{ __(' Funcionalidade Prévia') }}</label>
+                            <div class="col-md-6">
+                            <select id="funcionalidade" class="form-control" name="funcionalidade">
+                            <option selected></option>
+                            <option value="ECOG">ECOG</option>
+                            <option value="PPS">PPS</option>
+                            </select>    
+                            </div>
+                        </div>
+
+
+           
+                
+
+            
+                      <!--  aguda -->
+                      <div class="form-group row" required>
+                            <label for="aguda" class="col-md-4 col-form-label text-md-right">{{ __(' Disfunção Renal Aguda') }}</label>
+                            <div class="col-md-6">
+                            <select id="aguda" class="form-control" name="aguda">
+                            <option selected></option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                            </select>    
+                            </div>
+                        </div>
+
+
+
+
+                  
+
+          <!-- PA -->
+          <div class="form-group row">
+                            <label for="pa" class="col-md-4 col-form-label text-md-right">{{ __('PA') }}</label>
+                            <div class="col-md-6">
+                                <input id="pa" type="text" class="form-control @error('pa') is-invalid @enderror" name="pa"  required autocomplete="pa">
+                                @error('pa')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+
+
+
+
+          <!-- FC -->
+          <div class="form-group row">
+                            <label for="fc" class="col-md-4 col-form-label text-md-right">{{ __('FC') }}</label>
+                            <div class="col-md-6">
+                                <input id="fc" type="text" class="form-control @error('fc') is-invalid @enderror" name="fc"  required autocomplete="fc">
+                                @error('fc')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+
+
+
+
+            
+          <!-- spo2 -->
+          <div class="form-group row">
+                            <label for="spo2c" class="col-md-4 col-form-label text-md-right">{{ __('SPO2') }}</label>
+                            <div class="col-md-6">
+                                <input id="spo2c" type="text" class="form-control @error('spo2c') is-invalid @enderror" name="spo2c"  required autocomplete="spo2c">
+                                @error('spo2c')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+
+
+          <!-- Temp -->
+          <div class="form-group row">
+                            <label for="temp" class="col-md-4 col-form-label text-md-right">{{ __('Temp') }}</label>
+                            <div class="col-md-6">
+                                <input id="temp" type="text" class="form-control @error('spo2c') is-invalid @enderror" name="temp"  required autocomplete="temp">
+                                @error('temp')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+        
+          <!-- Peso  -->
+          <div class="form-group row">
+                            <label for="peso" class="col-md-4 col-form-label text-md-right">{{ __('Peso') }}</label>
+                            <div class="col-md-6">
+                                <input id="peso" type="text" class="form-control @error('spo2c') is-invalid @enderror" name="peso"  required autocomplete="peso">
+                                @error('peso')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+
+            <!-- Altura  -->
+          <div class="form-group row">
+                            <label for="altura" class="col-md-4 col-form-label text-md-right">{{ __('Altura') }}</label>
+                            <div class="col-md-6">
+                                <input id="altura" type="text" class="form-control @error('altura') is-invalid @enderror" name="altura"  required autocomplete="altura">
+                                @error('peso')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+
+
+        
+            <!-- Outros  -->
+            <div class="form-group row">
+                            <label for="altura" class="col-md-4 col-form-label text-md-right">{{ __('Outros') }}</label>
+                            <div class="col-md-6">
+                                <input id="outrosIC" type="text" class="form-control @error('outrosIC') is-invalid @enderror" name="outrosIC"  required autocomplete="outrosIC">
+                                @error('outrosIC')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+
+
+       <!--  Comorbidades  -->
+       <div class="form-group row">
+                            <label for="comorbidades" class="col-md-4 col-form-label text-md-right">{{ __('História Clínica / Comorbidades ') }}</label>
+                            <div class="col-md-6">
+                            <textarea class="form-control @error('comorbidades') is-invalid @enderror" name="comorbidades"  required autocomplete="comorbidades" rows="3"></textarea>
+                                @error('comorbidades')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+              </div>
+
+
+
+          <!-- nir  -->
+          <div class="form-group row">
+                            <label for="nir" class="col-md-4 col-form-label text-md-right">{{ __('Médico / Assistente / Nir') }}</label>
+                            <div class="col-md-6">
+                                <input id="nir" type="text" class="form-control @error('nir') is-invalid @enderror" name="nir"  required autocomplete="nir">
+                                @error('nir')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                       </div>
+
+
+
+
+
+                       </div>
+                        </div>
+                        </div>
+                        </div>
+
+<!--  fim -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
                        
 

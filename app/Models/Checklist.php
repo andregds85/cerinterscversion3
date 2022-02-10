@@ -23,6 +23,9 @@ class checklist extends Model
       'vacina',
       'estado',
       'diagnostico',
+      'gestante',
+      'recebeGestante',
+      'nascDestino',
       'hospitalOrigem',
       'LeitoOrigem',
       'hospitalDestino',
@@ -34,13 +37,16 @@ class checklist extends Model
       /*333333333333333333333333333333333333333333333333333 */ 
       'padrao',
       'contato',
+      'mcontato',
       'respiratoria',
+      'mrespiratoria',
       'covid',
       'metodo',
       'data',
      
-      
  
+
+
                
 
    ];
