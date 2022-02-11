@@ -44,9 +44,21 @@ class checklist extends Model
       'metodo',
       'data',
      
- 
+      'sng',
+      'svd',
+      'dreno',
+      'tottqt',
+      'dve',
+      'avc',
 
 
+      
+      
+
+
+          
+      
+      
                
 
    ];
