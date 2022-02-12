@@ -1000,7 +1000,6 @@ use App\Http\Controllers\ChecklistController;
                        </div>
                         </div>
                         </div>
-                        </div>
 
 <!--  fim -->
 
@@ -1091,9 +1090,25 @@ use App\Http\Controllers\ChecklistController;
                         </div>
         
                 
-                <!--  avconde -->
+                <!-- Onde ? -->
                 <div class="form-group row">
-                            <label for="periferico" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Periférico:') }}</label>
+                            <label for="periferico" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Central Onde ?') }}</label>
+                            <div class="col-md-6">
+                                <input id="avconde" type="text" class="form-control @error('avconde') is-invalid @enderror" name="avconde" required autocomplete="avconde">
+                                @error('avconde')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+                        
+                    
+                    
+                        <!--  Acesso Venoso Periférico -->
+                         <div class="form-group row">
+                            <label for="periferico" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Periférico') }}</label>
                             <div class="col-md-6">
                                 <input id="periferico" type="text" class="form-control @error('periferico') is-invalid @enderror" name="periferico" required autocomplete="periferico">
                                 @error('periferico')
@@ -1103,21 +1118,31 @@ use App\Http\Controllers\ChecklistController;
                                 @enderror
                             </div>
                         </div>
+
+
+                           <!--  outros -->
+                          <div class="form-group row">
+                            <label for="outros" class="col-md-4 col-form-label text-md-right">{{ __('Outros') }}</label>
+                            <div class="col-md-6">
+                            <textarea class="form-control @error('outros') is-invalid @enderror" name="outros"  required autocomplete="outros" rows="3"></textarea>
+                                @error('outros')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                         </div>
+
+
+
+
+
+
         
-                            
         
-         
         
 
-
-
-
-
-
-
-
-
-                       </div>
+                      </div>
                         </div>
                         </div>
                         </div>
@@ -1126,37 +1151,6 @@ use App\Http\Controllers\ChecklistController;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--  fim -->
                             <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

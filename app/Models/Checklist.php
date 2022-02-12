@@ -50,7 +50,9 @@ class checklist extends Model
       'tottqt',
       'dve',
       'avc',
-
+      'avconde',
+      'periferico',
+      'outros',
 
       
       
