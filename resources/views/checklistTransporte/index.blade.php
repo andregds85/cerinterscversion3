@@ -1151,6 +1151,333 @@ use App\Http\Controllers\ChecklistController;
 
 
 
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Suporte Hemodinamico:') }}</div>
+              
+             
+                <div class="card-body">
+
+
+
+
+                          <!--  SNG -->
+                          <div class="form-group row">
+                            <label for="sng" class="col-md-4 col-form-label text-md-right">{{ __('SNG') }}</label>
+                            <div class="col-md-6">
+                                <input id="sng" type="text" class="form-control @error('sng') is-invalid @enderror" name="sng" required autocomplete="sng">
+                                @error('sng')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+              
+
+                          <!--  SVD -->
+                          <div class="form-group row">
+                            <label for="svd" class="col-md-4 col-form-label text-md-right">{{ __('Svd') }}</label>
+                            <div class="col-md-6">
+                                <input id="svd" type="text" class="form-control @error('svd') is-invalid @enderror" name="svd" required autocomplete="svd">
+                                @error('svd')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+              
+            
+                <!--  Dreno -->
+                    <div class="form-group row">
+                            <label for="dreno" class="col-md-4 col-form-label text-md-right">{{ __('Dreno') }}</label>
+                            <div class="col-md-6">
+                                <input id="dreno" type="text" class="form-control @error('dreno') is-invalid @enderror" name="dreno" required autocomplete="dreno">
+                                @error('dreno')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+       
+
+                <!--  DVE -->
+                <div class="form-group row">
+                            <label for="dve" class="col-md-4 col-form-label text-md-right">{{ __('DVE') }}</label>
+                            <div class="col-md-6">
+                                <input id="dve" type="text" class="form-control @error('dve') is-invalid @enderror" name="dve" required autocomplete="dve">
+                                @error('dve')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+                        
+             
+                <!--  Acesso Venoso Central -->
+                <div class="form-group row">
+                            <label for="avc" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Central') }}</label>
+                            <div class="col-md-6">
+                                <input id="avc" type="text" class="form-control @error('avc') is-invalid @enderror" name="avc" required autocomplete="avc">
+                                @error('avc')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+                
+                <!-- Onde ? -->
+                <div class="form-group row">
+                            <label for="periferico" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Central Onde ?') }}</label>
+                            <div class="col-md-6">
+                                <input id="avconde" type="text" class="form-control @error('avconde') is-invalid @enderror" name="avconde" required autocomplete="avconde">
+                                @error('avconde')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+                        
+                    
+                    
+                        <!--  Acesso Venoso Periférico -->
+                         <div class="form-group row">
+                            <label for="periferico" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Periférico') }}</label>
+                            <div class="col-md-6">
+                                <input id="periferico" type="text" class="form-control @error('periferico') is-invalid @enderror" name="periferico" required autocomplete="periferico">
+                                @error('periferico')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                           <!--  outros -->
+                          <div class="form-group row">
+                            <label for="outros" class="col-md-4 col-form-label text-md-right">{{ __('Outros') }}</label>
+                            <div class="col-md-6">
+                            <textarea class="form-control @error('outros') is-invalid @enderror" name="outros"  required autocomplete="outros" rows="3"></textarea>
+                                @error('outros')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         </div>
+                        </div>
+                        </div>
+                        </div>
+
+<!--  fim -->
+
+
+
+<div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Suporte Ventilatorio:') }}</div>
+              
+             
+                <div class="card-body">
+
+
+
+
+                          <!--  SNG -->
+                          <div class="form-group row">
+                            <label for="sng" class="col-md-4 col-form-label text-md-right">{{ __('SNG') }}</label>
+                            <div class="col-md-6">
+                                <input id="sng" type="text" class="form-control @error('xx') is-invalid @enderror" name="xx" required autocomplete="sng">
+                                @error('sng')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+              
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         </div>
+                        </div>
+                        </div>
+                        </div>
+
+<!--  fim -->
+
+
+
+
+
+
+<div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Informações Complementares:') }}</div>
+              
+             
+                <div class="card-body">
+
+
+
+
+                          <!--  SNG -->
+                          <div class="form-group row">
+                            <label for="sng" class="col-md-4 col-form-label text-md-right">{{ __('SNG') }}</label>
+                            <div class="col-md-6">
+                                <input id="sng" type="text" class="form-control @error('xx') is-invalid @enderror" name="xx" required autocomplete="sng">
+                                @error('sng')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+              
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         </div>
+                        </div>
+                        </div>
+                        </div>
+
+<!--  fim -->
+
+
+
+
+
+<div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Suporte Ventilatorio:') }}</div>
+              
+             
+                <div class="card-body">
+
+
+
+
+                          <!--  SNG -->
+                          <div class="form-group row">
+                            <label for="sng" class="col-md-4 col-form-label text-md-right">{{ __('SNG') }}</label>
+                            <div class="col-md-6">
+                                <input id="sng" type="text" class="form-control @error('xx') is-invalid @enderror" name="xx" required autocomplete="sng">
+                                @error('sng')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+        
+              
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         </div>
+                        </div>
+                        </div>
+                        </div>
+
+<!--  fim -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
