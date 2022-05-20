@@ -35,6 +35,8 @@ use App\Http\Controllers\ProdutoController;
 
                              
 
+
+
                       <!--  dataSolicitacao -->
                        <div class="form-group row">
                             <label for="dataSolicitacao" class="col-md-4 col-form-label text-md-right">{{ __('Data da Solicitacao') }}</label>
@@ -643,32 +645,80 @@ Children.add(i - qnt);
                             </div>
                        </div>
     
-                   <!--  acessoVenosoCentral -->
-                          <div class="form-group row">
-                            <label for="acessoVenosoCentral" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Central') }}</label>
-                            <div class="col-md-6">
-                                <input id="acessoVenosoCentral" type="text" class="form-control @error('acessoVenosoCentral') is-invalid @enderror" name="acessoVenosoCentral"  required autocomplete="acessoVenosoCentral">
-                                @error('acessoVenosoCentral')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                       </div>
+     
+                        
+<div class="form-group row" required>
+<label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Central') }}</label>
+<div class="col-md-6">
+
+         <select name="acessoVenosoCentral" id="acesso-qnt" class="form-control">
+         <option value="0">Falta Preencher</option>
+         <option value="0">Não</option>
+         <option value="1">Sim</option>
+
+         </select>
+         <fieldset id="acesso">
+         </fieldset><!-- #children -->
+ </div>
+</div>
 
 
-                   <!--  avcOnde -->
-                      <div class="form-group row">
-                            <label for="avcOnde" class="col-md-4 col-form-label text-md-right">{{ __('Onde ? Acesso Venoso Central') }}</label>
-                            <div class="col-md-6">
-                                <input id="avcOnde" type="text" class="form-control @error('avcOnde') is-invalid @enderror" name="avcOnde"  required autocomplete="avcOnde">
-                                @error('avcOnde')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                       </div>
+
+<script type="text/javascript">
+var $acessoQnt = jQuery('#acesso-qnt'),
+$acesso = jQuery('#acesso');
+
+
+var acesso = {};
+acesso.container = $acesso;
+acesso.add = function(i) {
+while (i--) {
+    acesso.container.append('<label>Onde ? Acesso Venoso Central : ? <textarea class="form-control" name="avcOnde" rows="3"></textarea></label>');
+}
+
+}
+acesso.remove = function(i) {
+while (i--) {
+acesso.container.find('label:last').remove();
+}
+}
+
+
+$acessoQnt.on('change', function(){
+var $this = jQuery(this),
+i = $this.val(),
+qnt = $acesso.find('label').length;
+
+
+if (qnt > i) {
+acesso.remove(qnt - i);
+}
+if (qnt < i) {
+acesso.add(i - qnt);
+}
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                       <!--  acessoVenosoPeriferico -->
