@@ -27,10 +27,6 @@
                    <div><td>Email:</td><td> {{ Auth::user()->email}}</td> </div>
 
 
-
-
-
-
                </div>
             </div>
         </div>

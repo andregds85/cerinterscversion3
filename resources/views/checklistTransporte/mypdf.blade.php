@@ -67,26 +67,42 @@ $itensP = Checklist::where('id',$id)->get();
            <b>Sexo: </b> {{$t->sexo }}<br>
            <b>CPF:</b>{{$t->cpf }}<br>
            <b>RG:</b>{{$t->rg }}<br>
-     <b>Orgão Emissor: </b> {{$t->orgaoEmissor }}<br>
-     </td>
+      </td>
      <td>
-    
+    <b>Orgão Emissor: </b> {{$t->orgaoEmissor }}<br>
+    <b>Vacina Covid 19: </b> {{$t->vacina }}<br>
     <b> Estado: </b> {{$t->estado}}<br>
-    <b> Diagnóstico:</b> {{$t->diagnostico}}</td>
-    
-    </tr>
+    <b> Gestante:</b> {{$t->gestante}} <br>
+    <b> Quem recebe a gestante no local de destino:</b> {{$t->nasceDestino}} <br>
+
+      </td>
+   </tr>
 
   </tbody>
 </table>
 
 <table class="table table-bordered">
   <tbody>
+  <tr>
+      <td><b>Diagnóstico:</b>{{$t->diagnostico}} <br>
+      </td>
+    </tr>
+  </tbody>
+</table> 
+
+
+<table class="table table-bordered">
+  <tbody>
     <tr>
-      <td><b>Macro de Origem:</b>{{$t->macroOrigem }} <br>
+      <td> <br>
           <b>Hospital de Origem:</b>{{$t->hospitalOrigem }}<br>
            <b>Leito de Origem:</b> {{$t->LeitoOrigem }}<br>
+           <b>Setor de Origem:</b> {{$t->setorOrigem }}<br>
+           <b>Médico Responsável:</b> {{$t->medicoResponsavel }}<br>
+
+
       </td>
-          <td><b>Macro de Destino:</b>{{$t->macroDestino }}<br>
+          <td><br>
           <b>Hospital de Destino:</b>{{$t->hospitalDestino }}<br>
            <b>Leito de Destino:</b> {{$t->LeitoDestino }}<br>
            <b>Quem Recebe:</b> {{$t->quemRecebe }}<br>
@@ -112,18 +128,19 @@ $itensP = Checklist::where('id',$id)->get();
   <tr>
       <td><b>Padrão:</b>{{$t->padrao }} <br>
           <b>Contato:</b>{{$t->contato }}<br>
-           <b>Respiratória: </b> {{$t->respiratoria }}<br>
+          <b>Motivo do Contato:</b>{{$t->motivoContato }}<br>
+          <b>Respiratória: </b> {{$t->respiratoria }}<br>
       </td>
      <td>
     
+    <b> Motivo Respiratória: </b> {{$t->motivoRespiratoria}}<br>
     <b> Suspeito de Covid: </b> {{$t->covid}}<br>
-    <b> Método PR ou PCR:</b> {{$t->metodo}}/<br>
+    <b> Método:</b> {{$t->metodo}}<br>
     <b> Data:</b> {{$t->data}}</td>
     </tr>
 
   </tbody>
 </table>
-
 
 <table class="table table-bordered">
   <tbody>
@@ -139,16 +156,15 @@ $itensP = Checklist::where('id',$id)->get();
           <b>Svd:</b>{{$t->svd }}<br>
            <b>Dreno: </b> {{$t->dreno }}<br>
            <b>Tottqd: </b> {{$t->tottqd }}<br>
-           <b>Gtt: </b> {{$t->gtt }}<br>
            <b>DVE: </b> {{$t->dve }}<br>
 
 
       </td>
-      <td><b>Pai:</b>{{$t->pai }} <br>
-          <b>kehr:</b>{{$t->kehr }}<br>
+      <td>
            <b>Acesso Venoso Central: </b> {{$t->acessoVenosoCentral }}<br>
+           <b>Onde ? Acesso Venoso Central: </b> {{$t->avcOnde }}<br>
+
            <b>Acesso Venoso Periférico: </b> {{$t->acessoVenosoPeriferico }}<br>
-           <b>Cateter Dialise: </b> {{$t->cateterDialise }}<br>
            <b>Outros: </b> {{$t->outros }}<br>
 
       </td>
@@ -167,13 +183,13 @@ $itensP = Checklist::where('id',$id)->get();
 <table class="table table-bordered">
   <tbody>
   <tr>
-      <td><b>Drogas : </b>Vazão<br>
-         <b>NORADRENALINA:</b>mcg / kg / min<br>
-         <b>Vasopressina:</b>UI / min<br>
-  
-         </td>
+      <td><b>Drogas em Bic : </b>Vazão<br>
+         <b>NORADRENALINA:</b> ml/ h<br>
+         <b>Vasopressina:</b> ml/h<br>
+          </td>
          
-      <td><b>DOBUTAMINA:  mcg / Kg / min <br> Outros (Espceficar Drogas e Vazão ):</b>{{$t->drogas }} <br>
+      <td><b>DOBUTAMINA:  ml/h  <br> Outros (Espceficar Drogas e Vazão ):</b>{{$t->drogas }} <br>
+     <b>Sedação :</b>{{$t->sedacao }} <br>
      </td>
     </tr>
   </tbody>
@@ -196,10 +212,15 @@ $itensP = Checklist::where('id',$id)->get();
            <b>vm: </b> {{$t->vm }}<br>
            <b>Fio: </b> {{$t->fiO2 }}<br>
       </td>
-      <td><b>vm: </b> {{$t->vm }}<br>
+      <td>
           <b>Peep:</b>{{$t->peep }} <br>
           <b>Spo2:</b>{{$t->spO2 }}<br>
            <b>Prona:</b> {{$t->prona }}<br>
+           <b>Volume:</b> {{$t->volume }}<br>
+
+           
+
+
            <b>Classificação de Risco do Transporte: </b> {{$t->risco }}<br>
         </td>
     </tr>
@@ -222,12 +243,20 @@ $itensP = Checklist::where('id',$id)->get();
            <b>PA: </b> {{$t->pa}}<br>
            <b>FC: </b> {{$t->fc}}<br>
            <b>SPO2: </b> {{$t->spo2c }}<br>
+           <b>Glasgow: </b> {{$t->glasgow }}<br>
+
+    
 
       </td>
-      <td><b>Temp: </b> {{$t->temp }}<br>
+      <td>
+          <b>Temp: </b> {{$t->temp }}<br>
           <b>Peso :</b>{{$t->peso }} <br>
           <b>Altura:</b>{{$t->altura }}<br>
-           <b>Outros:</b> {{$t->outrosIC }}<br>
+          <b>Outros:</b> {{$t->outrosIC }}<br>
+          <b>FR:</b> {{$t->fr }}<br>
+          <b>HGT:</b> {{$t->hgt }}<br>
+
+
         </td>
     </tr>
   </tbody>
@@ -237,8 +266,42 @@ $itensP = Checklist::where('id',$id)->get();
 <table class="table table-bordered">
   <tbody>
   <tr>
-      <td><b>História Clínica / Comorbidades:</b>{{$t->comorbidades}} <br>
-          <b>Médico / Assistente / Nir :</b>{{$t->nir }}<br>
+      <td><b>Comorbidades:</b>{{$t->comorbidades}} <br>
+      </td>
+    </tr>
+  </tbody>
+</table> 
+
+
+
+
+<table class="table table-bordered">
+  <tbody>
+  <tr>
+     <td>   <b>Histórico Clinico Atual: </b>{{$t->historicoClinico }}<br>
+      </td>
+    </tr>
+  </tbody>
+</table> 
+
+
+
+
+<table class="table table-bordered">
+  <tbody>
+  <tr>
+     <td>   <b>Exames Físicos: </b>{{$t->efisico }}<br>
+      </td>
+    </tr>
+  </tbody>
+</table> 
+
+
+
+<table class="table table-bordered">
+  <tbody>
+  <tr>
+     <td>   <b>Exames Complementares: </b>{{$t->eComplementar }}<br>
       </td>
     </tr>
   </tbody>
@@ -250,7 +313,9 @@ $itensP = Checklist::where('id',$id)->get();
 
 
 
-      <!-- JavaScript (Opcional) -->
+
+
+    <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -261,6 +326,7 @@ $itensP = Checklist::where('id',$id)->get();
  
 
     </html>
+
 
 
 

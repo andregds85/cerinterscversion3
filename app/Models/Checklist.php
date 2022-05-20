@@ -23,48 +23,110 @@ class checklist extends Model
       'vacina',
       'estado',
       'diagnostico',
+     
+     
       'gestante',
-      'recebeGestante',
-      'nascDestino',
+      'nasceDestino',
+
+
+
       'hospitalOrigem',
       'LeitoOrigem',
+
+      'setorOrigem',
+      'medicoResponsavel',
+      
       'hospitalDestino',
       'LeitoDestino',
       'quemRecebe',
 
-      
-
+    
       /*333333333333333333333333333333333333333333333333333 */ 
       'padrao',
       'contato',
-      'mcontato',
+      'motivoContato',
+
       'respiratoria',
-      'mrespiratoria',
+      'motivoRespiratoria',
+
       'covid',
       'metodo',
       'data',
-     
+      /*Dispositivos invasivos */ 
+      /*fila 1 */ 
       'sng',
       'svd',
       'dreno',
-      'tottqt',
+      'tottqd',
+      /*Dispositivos invasivos */ 
+      /*fila 2 */ 
+      'acessoVenosoCentral',
+      'avcOnde',
+      'acessoVenosoPeriferico',
+      /*Dispositivos invasivos */ 
+      /*fila 3 */ 
       'dve',
-      'avc',
-      'avconde',
-      'periferico',
       'outros',
+      
+      
+      
+      /*suporte hemodinamico */ 
+      'drogas',
+      'sedacao',
 
-      
-      
 
 
-          
-      
-      
-               
+
+     /*suporte ventilatorio */ 
+     'suporteo2',
+     'cateter',
+     'mascara',
+     'outroSu',
+     'vm',
+     'fiO2',
+     'peep',
+     'spO2',
+     'prona',
+     'volume',
+
+     'risco',
+
+   /*informações complementares */ 
+    'aguda',
+    'funcionalidade',
+    'pa',
+    'fc',
+    'spo2c',
+    'glasgow',
+    'temp',
+    'peso',
+    'altura',
+    'outrosIC',
+    'fr',
+    'hgt',
+    'comorbidades',
+    'historicoClinico',
+    'efisico',
+    'eComplementar',
+ 
+
+
+    /*Regulação Estadual */ 
+      'usuario',
+      'preenchimento',
+      'horaPreenchimento',
+             
+
+
+
+
+
+
+
+
+             
 
    ];
 }
 
 
-  

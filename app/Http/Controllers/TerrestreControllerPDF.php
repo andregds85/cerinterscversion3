@@ -19,6 +19,7 @@ class TerrestreControllerPDF extends Controller
         ];
           
         $pdf = PDF::loadView('terrestre.mypdf', $data);
+    
         return $pdf->download('TransporteTerrestre.pdf');
     }
 

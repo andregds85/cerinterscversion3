@@ -30,6 +30,7 @@ class ChecklistController  extends Controller
                
         ]);    
         Checklist::create($request->all());
+      echo "<script>  alert('Solicitação Efetuada com Sucesso')</script>";
         return view('monitoramento.index');
   
     }

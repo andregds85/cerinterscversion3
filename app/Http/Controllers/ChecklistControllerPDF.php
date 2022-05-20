@@ -21,14 +21,18 @@ class ChecklistControllerPDF extends Controller
     
 
 
+
     public function index($id)
     {
+
+
        $data = [
             'title' => 'Checklist Transporte Seguro',
             'date' => date('d/m/Y')
         ];
           
         $pdf = PDF::loadView('checklistTransporte.mypdf',['id'=>$id]);
+
     
         return $pdf->download('ChecklistTransporteSeguro.pdf');
     }

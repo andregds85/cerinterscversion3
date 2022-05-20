@@ -3,9 +3,8 @@
 
 <?php 
 
-echo "Sucesso";
+echo "CheckList de Transporte cadastrado com Sucesso";
 echo "<Br>";
-echo "Motiramento";
 
 
 use App\Models\monitoramento;
