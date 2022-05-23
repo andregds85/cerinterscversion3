@@ -6,6 +6,434 @@ use App\Models\Produto;
 use App\Http\Controllers\ProdutoController;
 ?>
 
+<SCRIPT> 
+<!--
+function valida()
+{
+if(document.regform.nome.value=="" || document.regform.nome.value.length < 5)
+{
+alert( "Preencha campo Nome com Nome Completo!" );
+regform.nome.focus();
+return false;
+}
+if(document.regform.cns.value.length < 12  || document.regform.cns.value.length > 16)
+{
+alert( "Preencha campo CNS corretamente ");
+regform.cns.focus();
+return false;
+}
+if(document.regform.sexo.value=="") 
+{
+alert( "Preencha campo Sexo Corretamente ");
+regform.sexo.focus();
+return false;
+}
+if(document.regform.cpf.value.length < 11  || document.regform.cpf.value.length > 12)
+{
+alert( "Preencha campo CPF corretamente ");
+regform.cpf.focus();
+return false;
+}
+if(document.regform.rg.value.length < 8  || document.regform.rg.value.length > 16)
+{
+alert( "Preencha campo RG corretamente ");
+regform.rg.focus();
+return false;
+}
+if(document.regform.orgaoEmissor.value.length < 3  || document.regform.orgaoEmissor.value.length > 60)
+{
+alert( "Preencha campo Orgão Emissor Corretamente ");
+regform.orgaoEmissor.focus();
+return false;
+}
+if(document.regform.vacina.value.length < 3  || document.regform.vacina.value.length > 60)
+{
+alert( "Preencha campo Vacina Corretamente ");
+regform.vacina.focus();
+return false;
+}
+if(document.regform.estado.value=="") 
+{
+alert( "Preencha campo Estado Corretamente ");
+regform.estado.focus();
+return false;
+}
+if(document.regform.diagnostico.value==""  || document.regform.diagnostico.value.length < 10)   
+{
+alert( "Preencha campo Diagnóstico com No Mínimo 10 Dígitos ");
+regform.diagnostico.focus();
+return false;
+}
+if(document.regform.gestante.value=="") 
+{
+alert( "Selecione campo Gestante Sim / Não ");
+regform.gestante.focus();
+return false;
+}
+if(document.regform.nasceDestino.value==""  || document.regform.nasceDestino.value.length < 7)   
+{
+alert( "Preencha o campo Se o Nascimento for no Destino ? Quem Recebe e etc..  com No Mínimo 6 Dígitos  ");
+regform.nasceDestino.focus();
+return false;
+}
+if(document.regform.hospitalOrigem.value==""  || document.regform.hospitalOrigem.value.length < 6)   
+{
+alert( "Preencha campo Hospital de Origem Corretamente ");
+regform.hospitalOrigem.focus();
+return false;
+}
+if(document.regform.LeitoOrigem.value==""  || document.regform.LeitoOrigem.value.length < 2)   
+{
+alert( "Preencha campo Leito de Origem Corretamente com no mínimo 2 Dígitos ");
+regform.LeitoOrigem.focus();
+return false;
+}
+if(document.regform.setorOrigem.value==""  || document.regform.setorOrigem.value.length < 6)   
+{
+alert( "Preencha campo Setor de Origem Corretamente ou Com mais Caracteres ");
+regform.setorOrigem.focus();
+return false;
+}
+if(document.regform.medicoResponsavel.value==""  || document.regform.medicoResponsavel.value.length < 6)   
+{
+alert( "Preencha campo Médico Responsável Corretamente ");
+regform.medicoResponsavel.focus();
+return false;
+}
+if(document.regform.hospitalDestino.value==""  || document.regform.hospitalDestino.value.length < 6)   
+{
+alert( "Preencha campo Hospital de Destino Corretamente ");
+regform.hospitalDestino.focus();
+return false;
+}
+if(document.regform.LeitoDestino.value==""  || document.regform.LeitoDestino.value.length < 2)   
+{
+alert( "Preencha campo Leito de Destino Corretamente com no mínimo 2 Dígitos ");
+regform.LeitoDestino.focus();
+return false;
+}
+if(document.regform.quemRecebe.value==""  || document.regform.quemRecebe.value.length < 2)   
+{
+alert( "Preencha campo Quem Recebe Corretamente com no mínimo 2 Dígitos ");
+regform.quemRecebe.focus();
+return false;
+}
+if(document.regform.padrao.value=="") 
+{
+alert( "Selecione campo Padrão com Sim / Não ");
+regform.padrao.focus();
+return false;
+}
+if(document.regform.contato.value=="") 
+{
+alert( "Selecione campo contato com Sim / Não ");
+regform.contato.focus();
+return false;
+}
+if(document.regform.motivoContato.value==""  || document.regform.motivoContato.value.length < 11)   
+{
+alert( "Descreva o Motivo do Contato com mais de 12 Caracteres");
+regform.motivoContato.focus();
+return false;
+}
+if(document.regform.respiratoria.value=="") 
+{
+ alert( "Selecione campo respiratoria com Sim / Não ");
+regform.respiratoria.focus();
+return false;
+}
+if(document.regform.motivoRespiratoria.value==""  || document.regform.motivoRespiratoria.value.length < 11)   
+{
+alert( "Descreva o Motivo Respiratória com mais de 12 Caracteres");
+regform.motivoRespiratoria.focus();
+return false;
+}
+if(document.regform.covid.value=="") 
+{
+ alert( "Selecione campo covid com Supeito / Confirmado ");
+regform.covid.focus();
+return false;
+}
+if(document.regform.metodo.value=="") 
+{
+ alert( "Selecione campo metodo com TR / PCR ");
+regform.metodo.focus();
+return false;
+}
+if(document.regform.sng.value=="") 
+{
+ alert( "Preencha Campo SNG ");
+regform.sng.focus();
+return false;
+}
+if(document.regform.svd.value=="") 
+{
+ alert( "Preencha Campo SVD ");
+regform.svd.focus();
+return false;
+}
+if(document.regform.dreno.value=="") 
+{
+ alert( "Preencha Campo Dreno ");
+regform.dreno.focus();
+return false;
+}
+if(document.regform.tottqd.value=="") 
+{
+ alert( "Preencha Campo tottqd ");
+regform.tottqd.focus();
+return false;
+}
+if(document.regform.acessoVenosoCentral.value=="") 
+{
+alert( "Preencha Campo Acesso Venoso Central ");
+regform.acessoVenosoCentral.focus();
+return false;
+} 
+if(document.regform.avcOnde.value=="") 
+{
+ alert( "Preencha Campo Onde ? Acesso Venoso Central ");
+regform.avcOnde.focus();
+return false;
+} 
+if(document.regform.acessoVenosoPeriferico.value=="") 
+{
+ alert( "Preencha Campo Acesso Venoso Periferico ");
+regform.acessoVenosoPeriferico.focus();
+return false;
+}
+if(document.regform.dve.value=="") 
+{
+alert( "Preencha Campo dve ");
+regform.dve.focus();
+return false;
+}
+if(document.regform.outros.value=="") 
+{
+alert( "Preencha Campo outros ");
+regform.outros.focus();
+return false;
+}
+if(document.regform.drogas.value=="") 
+{
+alert( "Preencha drogas ");
+regform.drogas.focus();
+return false;
+}
+if(document.regform.sedacao.value==""  || document.regform.sedacao.value.length < 7)   
+{
+alert( "Preencha Sedação com mais de 6 Caracteres ou digite Não faz uso de Sedação");
+regform.sedacao.focus();
+return false;
+}
+if(document.regform.suporteo2.value=="") 
+{
+alert( "Preencha suporteo2 ");
+regform.suporteo2.focus();
+return false;
+}
+if(document.regform.cateter.value=="") 
+{
+alert( "Preencha cateter  ");
+regform.cateter.focus();
+return false;
+}
+if(document.regform.mascara.value=="") 
+{
+alert( "Preencha mascara  ");
+regform.mascara.focus();
+return false;
+}
+if(document.regform.outroSu.value=="") 
+{
+alert( "Preencha outros  ");
+regform.outroSu.focus();
+return false;
+}
+if(document.regform.vm.value=="") 
+{
+alert( "Preencha vm  ");
+regform.vm.focus();
+return false;
+}
+if(document.regform.fiO2.value=="") 
+{
+alert( "Preencha FiO2  ");
+regform.fiO2.focus();
+return false;
+}
+if(document.regform.peep.value=="") 
+{
+alert( "Preencha peep  ");
+regform.peep.focus();
+return false;
+}
+if(document.regform.spO2.value=="") 
+{
+alert( "Preencha spO2  ");
+regform.spO2.focus();
+return false;
+}
+if(document.regform.prona.value=="") 
+{
+alert( "Preencha prona  ");
+regform.prona.focus();
+return false;
+}
+if(document.regform.volume.value=="") 
+{
+alert( "Preencha o campo Volume   ");
+regform.volume.focus();
+return false;
+}
+if(document.regform.risco.value=="") 
+{
+alert( "Preencha a Classificação do Risco do Transporte  ");
+regform.risco.focus();
+return false;
+}
+if(document.regform.aguda.value=="") 
+{
+alert( "Preencha o Campo Definição Renal Aguda");
+regform.F.focus();
+return false;
+}
+if(document.regform.funcionalidade.value=="") 
+{
+alert( "Preencha o Campo funcionalidade");
+regform.funcionalidade.focus();
+return false;
+}
+if(document.regform.pa.value=="") 
+{
+alert( "Preencha o Campo  PA");
+regform.pa.focus();
+return false;
+}
+if(document.regform.fc.value=="") 
+{
+alert( "Preencha o Campo  fc");
+regform.fc.focus();
+return false;
+}
+if(document.regform.spo2c.value=="") 
+{
+alert( "Preencha o Campo  spo2c");
+regform.spo2c.focus();
+return false;
+}
+if(document.regform.glasgow.value=="") 
+{
+alert( "Preencha o Campo Glasgow");
+regform.glasgow.focus();
+return false;
+}
+if(document.regform.temp.value=="") 
+{
+alert( "Preencha o Campo  temp");
+regform.temp.focus();
+return false;
+}
+if(document.regform.peso.value=="") 
+{
+alert( "Preencha o Campo  peso");
+regform.peso.focus();
+return false;
+}
+if(document.regform.altura.value=="") 
+{
+alert( "Preencha o Campo  altura");
+regform.altura.focus();
+return false;
+}
+if(document.regform.outrosIC.value=="") 
+{
+alert( "Preencha o Campo  outrosIC");
+regform.outrosIC.focus();
+return false;
+}
+if(document.regform.fr.value=="") 
+{
+alert( "Preencha o Campo  FR");
+regform.fr.focus();
+return false;
+}
+if(document.regform.hgt.value=="") 
+{
+alert( "Preencha o Campo  HGT");
+regform.hgt.focus();
+return false;
+}
+if(document.regform.comorbidades.value=="") 
+{
+alert( "Preencha o Campo  comorbidades");
+regform.comorbidades.focus();
+return false;
+}
+if(document.regform.historicoClinico.value==""  || document.regform.historicoClinico.value.length < 11)   
+{
+alert( "Descreva o Historico Clinico Atual com mais de 12 Caracteres");
+regform.historicoClinico.focus();
+return false;
+}
+if(document.regform.efisico.value==""  || document.regform.efisico.value.length < 7)   
+{
+alert( "Descreva os Exames Físicos com mais de 6 Caracteres");
+regform.efisico.focus();
+return false;
+}
+if(document.regform.eComplementar.value==""  || document.regform.eComplementar.value.length < 7)   
+{
+alert( "Descreva os Exames Complementares com mais de 6 Caracteres");
+regform.eComplementar.focus();
+return false;
+}
+return true;
+}
+</script>
+
+<script>
+function onlynumber(evt) {
+   var theEvent = evt || window.event;
+   var key = theEvent.keyCode || theEvent.which;
+   key = String.fromCharCode( key );
+   //var regex = /^[0-9.,]+$/;
+   var regex = /^[0-9.]+$/;
+   if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+   }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <form action="{{ route('checklist.store') }}" method="POST" id="validate" enctype="multipart/form-data" NAME="regform"
     onsubmit="return valida()">
@@ -447,38 +875,59 @@ Children.add(i - qnt);
                         </div>
 
           
-          <!--  contato -->
-         <div class="form-group row" required>
-                            <label for="contato" class="col-md-4 col-form-label text-md-right">{{ __('Contato') }}</label>
-                            <div class="col-md-6">
-                            <select id="contato" class="form-control" name="contato">
-                            <option selected></option>
-                            <option value="Sim">Sim</option>
-                            <option value="Não">Não</option>
-                            </select>    
-                            </div>
-                        </div>
-    
-                        
+
+                        <div class="form-group row" required>
+<label for="contato" class="col-md-4 col-form-label text-md-right">{{ __('Contato') }}</label>
+<div class="col-md-6">
+
+         <select name="contato" id="contato-qnt" class="form-control">
+         <option value="0">Falta Preencher</option>
+         <option value="0">Não</option>
+         <option value="1">Sim</option>
+
+         </select>
+         <fieldset id="contato">
+         </fieldset>
+ </div>
+</div>
+
+
+<script type="text/javascript">
+var $contatoQnt = jQuery('#contato-qnt'),
+$contato = jQuery('#contato');
+
+
+var contato = {};
+contato.container = $contato;
+contato.add = function(i) {
+while (i--) {
+    contato.container.append('<label> Motivo do Contato : ? <textarea class="form-control" name="motivoContato" rows="3"></textarea></label>');
+}
+
+}
+contato.remove = function(i) {
+while (i--) {
+contato.container.find('label:last').remove();
+}
+}
+
+$contatoQnt.on('change', function(){
+var $this = jQuery(this),
+i = $this.val(),
+qnt = $contato.find('label').length;
+
+
+if (qnt > i) {
+contato.remove(qnt - i);
+}
+if (qnt < i) {
+contato.add(i - qnt);
+}
+});
+</script>
 
 
 
-            <!--  Motivo Contato -->
-                <div class="form-group row">
-                            <label for="motivoContato" class="col-md-4 col-form-label text-md-right">{{ __('Motivo do Contato') }}</label>
-                            <div class="col-md-6">
-                            <textarea class="form-control @error('motivoContato') is-invalid @enderror" name="motivoContato"  required autocomplete="motivoContato" rows="3"></textarea>
-                                @error('motivoContato')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                  </div>
-               
-
-
-      
          <!--  respiratoria -->
          <div class="form-group row" required>
                             <label for="respiratoria" class="col-md-4 col-form-label text-md-right">{{ __('Respiratoria') }}</label>
@@ -581,11 +1030,7 @@ Children.add(i - qnt);
 
               
              
-
-
-
-    
-                
+               
 
                     <!--  sng -->
                       <div class="form-group row">
@@ -631,7 +1076,6 @@ Children.add(i - qnt);
                        </div>
 
 
-
                        <!--  tottqd -->
                       <div class="form-group row">
                             <label for="tottqd" class="col-md-4 col-form-label text-md-right">{{ __('TOT/TQT') }}</label>
@@ -658,7 +1102,7 @@ Children.add(i - qnt);
 
          </select>
          <fieldset id="acesso">
-         </fieldset><!-- #children -->
+         </fieldset>
  </div>
 </div>
 
@@ -699,24 +1143,6 @@ acesso.add(i - qnt);
 });
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
