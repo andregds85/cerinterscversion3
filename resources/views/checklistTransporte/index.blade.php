@@ -64,18 +64,21 @@ alert( "Preencha campo Diagnóstico com No Mínimo 10 Dígitos ");
 regform.diagnostico.focus();
 return false;
 }
-if(document.regform.gestante.value=="") 
-{
-alert( "Selecione campo Gestante Sim / Não ");
-regform.gestante.focus();
-return false;
-}
-if(document.regform.nasceDestino.value==""  || document.regform.nasceDestino.value.length < 7)   
-{
-alert( "Preencha o campo Se o Nascimento for no Destino ? Quem Recebe e etc..  com No Mínimo 6 Dígitos  ");
-regform.nasceDestino.focus();
-return false;
-}
+
+
+
+if (document.regform.gestante.value.length == 0 )   
+    {
+    alert('Falta escolher a Gestante');
+    regform.gestante.focus();
+    return false;
+     }
+
+
+
+
+
+
 if(document.regform.hospitalOrigem.value==""  || document.regform.hospitalOrigem.value.length < 6)   
 {
 alert( "Preencha campo Hospital de Origem Corretamente ");
@@ -651,36 +654,25 @@ function onlynumber(evt) {
                   </div>
 
 
-            
-                      
+           
+              
                     
- 
-
-
-
-
-
-
-
-
-<div class="form-group row" required>
+             
+ <div class="form-group row" required>
 <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Gestante') }}</label>
 <div class="col-md-6">
 
          <select name="gestante" id="children-qnt" class="form-control">
-         <option value="D">Falta Preencher</option>
+         <option value=""> </option>
          <option value="0">Não</option>
          <option value="1">Sim</option>
 
+      
          </select>
          <fieldset id="children">
          </fieldset>
-         
-         
-         <!-- #children -->
  </div>
 </div>
-
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
@@ -693,8 +685,9 @@ var Children = {};
 Children.container = $children;
 Children.add = function(i) {
 while (i--) {
-    Children.container.append('<label>Quem Recebe a Gestante no Local de destino ?  <textarea class="form-control" name="nasceDestino" rows="3"></textarea></label>');
+    Children.container.append('<label>Quem Recebe a Gestante : ? <textarea class="form-control" name="nasceDestino" rows="3"></textarea></label>');
 }
+
 }
 Children.remove = function(i) {
 while (i--) {
@@ -708,7 +701,6 @@ var $this = jQuery(this),
 i = $this.val(),
 qnt = $children.find('label').length;
 
-
 if (qnt > i) {
 Children.remove(qnt - i);
 }
@@ -716,15 +708,7 @@ if (qnt < i) {
 Children.add(i - qnt);
 }
 });
-
 </script>
-
-
-
-
-
-
-
 
 
 
@@ -1203,62 +1187,14 @@ acesso.add(i - qnt);
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Suporte Hemodinâmico: Drogas em BIC') }}</div>
+                <div class="card-header">{{ __('Suporte Hemodinâmico: Drogas em BIC (NORADRENALINA, VASOPRESINA, DOBUTAMINA)') }}</div>
               
              
                 <div class="card-body">
 
               
              
-     <table class="table">
-  <thead class="">
-    <tr>
-   
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>NORADRENALINA</td>
-      <td>VASOPRESINA</td>
-
-    </tr>
-    <tr>
-      <td>ml/h</td>
-      <td>ml/h</td>
-    </tr>
-
-  </tbody>
-</table>
-
-
-
-
-<table class="table">
-  <thead class="">
-    <tr>
-   
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-
-      <td>DOBUTAMINA</td>
-
-    </tr>
-    <tr>
-       <td>ml/h</td>
-    </tr>
-
-  </tbody>
-</table>
-
-
-
-
-
-
-
-         
+        
 
           <!--  Outros Especificar Drogas e Vazão -->
           <div class="form-group row">
