@@ -64,21 +64,18 @@ alert( "Preencha campo Diagnóstico com No Mínimo 10 Dígitos ");
 regform.diagnostico.focus();
 return false;
 }
-
-
-
-if (document.regform.gestante.value.length == 0 )   
-    {
-    alert('Falta escolher a Gestante');
-    regform.gestante.focus();
-    return false;
-     }
-
-
-
-
-
-
+if(document.regform.gestante.value=="") 
+{
+alert( "Selecione campo Gestante Sim / Não ");
+regform.gestante.focus();
+return false;
+}
+if(document.regform.nasceDestino.value==""  || document.regform.nasceDestino.value.length < 7)   
+{
+alert( "Preencha o campo Se o Nascimento for no Destino ? Quem Recebe e etc..  com No Mínimo 6 Dígitos  ");
+regform.nasceDestino.focus();
+return false;
+}
 if(document.regform.hospitalOrigem.value==""  || document.regform.hospitalOrigem.value.length < 6)   
 {
 alert( "Preencha campo Hospital de Origem Corretamente ");
@@ -395,6 +392,33 @@ return true;
 }
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
 function onlynumber(evt) {
    var theEvent = evt || window.event;
@@ -408,33 +432,6 @@ function onlynumber(evt) {
    }
 }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -713,10 +710,6 @@ Children.add(i - qnt);
 
 
 
-
-
-
-
       <!--  hospitalOrigem -->
       <div class="form-group row">
                             <label for="hospitalOrigem" class="col-md-4 col-form-label text-md-right">{{ __('Hospital de Origem') }}</label>
@@ -824,9 +817,6 @@ Children.add(i - qnt);
 
 
 
-
-
-
        
                        </div>
                         </div>
@@ -841,7 +831,7 @@ Children.add(i - qnt);
             <div class="card">
                 <div class="card-header">{{ __('Tipos de Precaução:') }}</div>
               
-             
+            
                 <div class="card-body">
 
 
@@ -860,12 +850,13 @@ Children.add(i - qnt);
 
           
 
-                        <div class="form-group row" required>
+
+<div class="form-group row" required>
 <label for="contato" class="col-md-4 col-form-label text-md-right">{{ __('Contato') }}</label>
 <div class="col-md-6">
 
          <select name="contato" id="contato-qnt" class="form-control">
-         <option value="0">Falta Preencher</option>
+         <option value=""></option>
          <option value="0">Não</option>
          <option value="1">Sim</option>
 
@@ -912,35 +903,55 @@ contato.add(i - qnt);
 
 
 
-         <!--  respiratoria -->
-         <div class="form-group row" required>
-                            <label for="respiratoria" class="col-md-4 col-form-label text-md-right">{{ __('Respiratoria') }}</label>
-                            <div class="col-md-6">
-                            <select id="respiratoria" class="form-control" name="respiratoria">
-                            <option selected></option>
-                            <option value="Sim">Sim</option>
-                            <option value="Não">Não</option>
-                            </select>    
-                            </div>
-                        </div>
+<div class="form-group row" required>
+<label for="respiratoria" class="col-md-4 col-form-label text-md-right">{{ __('Respiratoria ') }}</label>
+<div class="col-md-6">
+
+         <select name="respiratoria" id="respiratoria-qnt" class="form-control">
+         <option value=""></option>
+         <option value="0">Não</option>
+         <option value="1">Sim</option>
+
+         </select>
+         <fieldset id="respiratoria">
+         </fieldset>
+ </div>
+</div>
 
 
-                  
+<script type="text/javascript">
+var $respiratoriaQnt = jQuery('#respiratoria-qnt'),
+$respiratoria = jQuery('#respiratoria');
 
-            <!--  Motivo Respiratória -->
-                <div class="form-group row">
-                            <label for="motivoRespiratoria" class="col-md-4 col-form-label text-md-right">{{ __('Motivo Respiratória') }}</label>
-                            <div class="col-md-6">
-                            <textarea class="form-control @error('motivoRespiratoria') is-invalid @enderror" name="motivoRespiratoria"  required autocomplete="motivoRespiratoria" rows="3"></textarea>
-                                @error('motivoRespiratoria')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                  </div>
-               
 
+var respiratoria = {};
+respiratoria.container = $respiratoria;
+respiratoria.add = function(i) {
+while (i--) {
+    respiratoria.container.append('<label> Motivo do Respiratoria : ? <textarea class="form-control" name="motivoRespiratoria" rows="3"></textarea></label>');
+}
+
+}
+respiratoria.remove = function(i) {
+while (i--) {
+respiratoria.container.find('label:last').remove();
+}
+}
+
+$respiratoriaQnt.on('change', function(){
+var $this = jQuery(this),
+i = $this.val(),
+qnt = $respiratoria.find('label').length;
+
+
+if (qnt > i) {
+respiratoria.remove(qnt - i);
+}
+if (qnt < i) {
+respiratoria.add(i - qnt);
+}
+});
+</script>
 
            <!--  covid -->
          <div class="form-group row" required>
@@ -1080,7 +1091,7 @@ contato.add(i - qnt);
 <div class="col-md-6">
 
          <select name="acessoVenosoCentral" id="acesso-qnt" class="form-control">
-         <option value="0">Falta Preencher</option>
+         <option value=""></option>
          <option value="0">Não</option>
          <option value="1">Sim</option>
 
